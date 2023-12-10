@@ -1,5 +1,6 @@
 package com.hotel.hotel.services;
 
+import com.hotel.hotel.exceptions.ResourceNotFoundException;
 import com.hotel.hotel.model.Hotel;
 import com.hotel.hotel.repo.HotelRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,4 +21,12 @@ public class HotelService {
         hotelRepo.save(hotel);
         return new ResponseEntity<>("saved hotel", HttpStatus.CREATED);
     }
-}
+    public Hotel getHotelById(String hotelId){
+        int id = Integer.parseInt(hotelId);
+        return hotelRepo.findById(id).orElseThrow(()
+                -> new ResourceNotFoundException("User with given id is not found on server"+hotelId));
+    }
+
+    }
+
+

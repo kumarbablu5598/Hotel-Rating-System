@@ -24,4 +24,5 @@ public class HostelController {
         return hotelService.addhotel(hotel);
     }
 
+
 }
