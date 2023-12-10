@@ -21,4 +21,13 @@ public class RatingService {
         ratingRepo.save(rating);
         return new ResponseEntity<>("saved rating", HttpStatus.CREATED);
     }
+    public List<Rating> getByUserId(String userId){
+        return ratingRepo.findByUserId(userId);
+    }
+    public List<Rating> getByRatingId(String ratingId){
+        return ratingRepo.findByRatingId(ratingId);
+    }
+    public List<Rating> getByHostelId(String hotelId){
+        return ratingRepo.findByHotelId(hotelId);
+    }
 }
