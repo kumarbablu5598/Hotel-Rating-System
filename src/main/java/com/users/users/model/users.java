@@ -21,5 +21,6 @@ public class users {
     String emailId;
     String userName;
     @Transient
-    List<Rating> ratings = new ArrayList<>();
+    List<Rating> ratings = new ArrayList<Rating>();
+
 }
