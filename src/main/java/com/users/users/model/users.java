@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,4 +20,6 @@ public class users {
     int age;
     String emailId;
     String userName;
+    @Transient
+    List<Rating> ratings = new ArrayList<>();
 }
